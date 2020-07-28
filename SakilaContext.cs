@@ -7,6 +7,8 @@ namespace Lesson11_1ClassExercise_EFCoreDbContextLINQSakilaDB
 {
     class SakilaContext : DbContext
     {
+
+        public DbSet<Film> Film { get; set; }
         public DbSet<Actor> Actor { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

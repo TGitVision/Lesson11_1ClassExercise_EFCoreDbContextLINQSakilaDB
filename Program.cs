@@ -43,11 +43,27 @@ namespace Lesson11_1ClassExercise_EFCoreDbContextLINQSakilaDB
             foreach (Actor a in actors)
             {
 
-                // Print the name of each actor.
-                Console.WriteLine($"{a.first_name} {a.last_name}");
-                //Console.WriteLine(a.first_name + " " + a.last_name);
+                // Print the name of each id and actor.
+                Console.WriteLine($"{a.actor_id} {a.first_name} {a.last_name}");
+                // Console.WriteLine(a.first_name + " " + a.first_name + " " + a.last_name);
 
             }
+
+            Film[] films = context.Film.ToArray();
+            foreach (Film f in films) 
+            {
+                // Print the film info.
+                Console.WriteLine($"{f.film_id} {f.title} {f.description}");
+                // Console.WriteLine(f.film_id + " " + f.title + " " + f.description);
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine($"******************************************");
+            Console.WriteLine($"Actors Count: { actors.Length } ");
+            Console.WriteLine($"Films Count: { films.Length} " );
+            Console.WriteLine($"******************************************");
+
 
         }
     }
